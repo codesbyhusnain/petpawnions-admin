@@ -1,0 +1,14 @@
+.input-add-articles {
+  .add-events-buttons {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+  }
+  .article_info {
+    display: flex;
+    flex-direction: row;
+  }
+  .input-group {
+    margin-top: 15px;
+  }
+}

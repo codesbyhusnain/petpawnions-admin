@@ -6,9 +6,9 @@ export const PlacesContext = createContext();
 
 export const PetPlacesProvider = (props) => {
   const [placesData, setPlacesData] = useState([]);
-  const [state, setState] = useState(0);
-  const apiUrl = "http://18.216.174.90:3000/api/petplace";
   const { token } = useContext(AuthContext);
+  const [state, setState] = useState(0);
+  const apiUrl = "http://3.15.82.201:3000/api/petplace";
   const tokenValue = String(localStorage.getItem("jwtToken"));
   const [jwtToken, setJwtToken] = token;
   setJwtToken(tokenValue);
@@ -52,15 +52,7 @@ export const PetPlacesProvider = (props) => {
     {
       title: "Phone",
     },
-    // {
-    //   title: "Facebook Link",
-    // },
-    // {
-    //   title: "Instagram Link",
-    // },
-    // {
-    //   title: "Twitter Link",
-    // },
+
     {
       title: "Email",
     },

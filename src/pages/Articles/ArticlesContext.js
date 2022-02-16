@@ -7,7 +7,7 @@ export const ArticlesContext = createContext();
 export const ArticlesProvider = (props) => {
   const [articles, setArticles] = useState([]);
   const [state, setState] = useState(0);
-  const apiUrl = "http://18.216.174.90:3000/api/article";
+  const apiUrl = "http://3.15.82.201:3000/api/article";
   const { token } = useContext(AuthContext);
   const tokenValue = String(localStorage.getItem("jwtToken"));
   const [jwtToken, setJwtToken] = token;
@@ -19,7 +19,9 @@ export const ArticlesProvider = (props) => {
   };
 
   useEffect(() => {
-    Axios.get(apiUrl, config).then((response) => setArticles(response.data));
+    Axios.get(apiUrl, config).then((response) =>
+      setArticles(response.data.data)
+    );
   }, []);
 
   const columns = [

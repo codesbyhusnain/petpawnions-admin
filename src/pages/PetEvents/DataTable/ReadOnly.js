@@ -25,7 +25,7 @@ const ReadOnly = ({
       Authorization: `Bearer ${token}`,
     },
   };
-  const apiUrl = `http://18.216.174.90:3000/api/event/${id}`;
+  const apiUrl = `http://3.15.82.201:3000/api/event/${id}`;
   const deleteEvent = (e) => {
     e.preventDefault();
     Axios.delete(apiUrl, config)

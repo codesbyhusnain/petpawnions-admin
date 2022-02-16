@@ -58,8 +58,6 @@ const DataTable = ({ token }) => {
   const [editFieldsFilled, setEditFieldsFilled] = useState(null);
   const [deleteSuccess, setDeleteSuccess] = useState(null);
 
-  const getEventUrl = "http://18.216.174.90:3000/api/event";
-
   //EXPORTED FUNCTIONS
   const deleteEventStatus = (e) => {
     setDeleteSuccess(e);

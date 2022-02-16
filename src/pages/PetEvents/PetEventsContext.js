@@ -10,7 +10,7 @@ export const PetEventsProvider = (props) => {
   const tokenValue = String(localStorage.getItem("jwtToken"));
   const [jwtToken, setJwtToken] = token;
   setJwtToken(tokenValue);
-  const apiUrl = "http://18.216.174.90:3000";
+  const apiUrl = "http://3.15.82.201:3000";
   const getEventsUrl = `${apiUrl}/api/event`;
 
   const config = {
@@ -21,7 +21,7 @@ export const PetEventsProvider = (props) => {
 
   useEffect(() => {
     Axios.get(getEventsUrl, config).then((response) =>
-      setEventsData(response.data)
+      setEventsData(response.data.data)
     );
   }, []);
 

@@ -1,11 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import "./Login.css";
 import Background from "../../Assets/login-bg.png";
 import Logo from "../../Assets/logo.png";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { AuthContext } from "../../AuthContext";
 
 const Login = () => {
+  const { token, authProtect } = useContext(AuthContext);
+  const [jwtToken, setjwtToken] = token;
+  const [authProtected, setAuthProtected] = authProtect;
+
   const [state, setState] = useState(0);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -72,6 +77,7 @@ const Login = () => {
       axios
         .post(baseUrl, loginInfo)
         .then((res) => {
+          setjwtToken(res.data.idToken.jwtToken);
           setStatusMessage("Login Successful!");
           setLoginStatus(true);
         })
@@ -81,6 +87,11 @@ const Login = () => {
         });
     }
   };
+
+  useEffect(() => {
+    localStorage.setItem("jwtToken", jwtToken);
+    localStorage.setItem("authProtected", authProtected);
+  }, [jwtToken, authProtected]);
 
   return (
     <div

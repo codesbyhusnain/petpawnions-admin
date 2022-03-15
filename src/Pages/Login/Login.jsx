@@ -2,7 +2,7 @@ import React, { useState, useContext, useEffect } from "react";
 import "./Login.css";
 import Background from "../../Assets/login-bg.png";
 import Logo from "../../Assets/logo.png";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import axios from "axios";
 import { AuthContext } from "../../AuthContext";
 
@@ -92,6 +92,10 @@ const Login = () => {
     localStorage.setItem("jwtToken", jwtToken);
     localStorage.setItem("authProtected", authProtected);
   }, [jwtToken, authProtected]);
+
+  if (loginStatus) {
+    return <Navigate to="/articles" />;
+  }
 
   return (
     <div

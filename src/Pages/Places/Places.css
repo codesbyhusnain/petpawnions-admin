@@ -1,0 +1,11 @@
+.places-container {
+  margin-top: 20px;
+  margin-left: 16%;
+  width: 82%;
+}
+
+.places-actions {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+}

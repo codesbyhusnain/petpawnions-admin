@@ -10,7 +10,7 @@ import AddArticle from "../Pages/Articles/AddArticle";
 //PUBLIC PAGES
 
 const publicRoutes = [
-  { path: "/login", component: Login },
+  { path: "/", component: Login },
   { path: "/forgotpassword", component: ForgotPassword },
 ];
 
